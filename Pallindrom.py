@@ -33,7 +33,9 @@ def main():
             if user_list_input.lower() == 'exit':
                 print("завершення програми")
                 break
-            d = deque(user_list_input)
+            
+            clean_gap = ''.join(user_list_input.lower().split()) # прибираємо пробіли і не зважаємо на регістр символів
+            d = deque(clean_gap)
             check_palindrom(d)
             input("\nНатисніть Enter, щоб продовжити...")
      
